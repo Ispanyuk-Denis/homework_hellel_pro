@@ -11,9 +11,7 @@
 2
 
 function capitalizeFirstLetter (string) {
-    let strArr = string.split('');
-    strArr.splice(0, 1, `${strArr[0].toUpperCase()}`);
-    return strArr.join('');
+    return string[0].toUpperCase()+string.slice(1);
 }
 console.log(capitalizeFirstLetter("hello"));
 console.log(capitalizeFirstLetter("kkkfkkELLO"));
