@@ -10,12 +10,12 @@
 
 2
 
-function capitalizeFirstLetter (string) {
-    return string[0].toUpperCase()+string.slice(1);
-}
-console.log(capitalizeFirstLetter("hello"));
-console.log(capitalizeFirstLetter("kkkfkkELLO"));
-console.log(capitalizeFirstLetter("hElLo")); 
+// function capitalizeFirstLetter (string) {
+//     return string[0].toUpperCase()+string.slice(1);
+// }
+// console.log(capitalizeFirstLetter("hello"));
+// console.log(capitalizeFirstLetter("kkkfkkELLO"));
+// console.log(capitalizeFirstLetter("hElLo")); 
 
 //3
 
@@ -24,8 +24,8 @@ console.log(capitalizeFirstLetter("hElLo"));
 //         return str;
 //     }
 //     else {
-//         let strArr = str.split('').slice(0, maxlength);
-//         return strArr.join('') + "...";
+//         let strArr = str.slice(0, maxlength);
+//         return strArr + "...";
 //     }
 // }
 // console.log(truncate("Hello world", 5)); // Hello...
@@ -51,15 +51,16 @@ console.log(capitalizeFirstLetter("hElLo"));
 //         marks: [10, 9, 8, 9 ]
 //     }
 // ]
-// students.map (function searchStudent(studentsObj) {
-//     let sum = 0;
-//     studentsObj.marks.map((item) => {
-//         sum = sum + item;
-//         return (sum);
-//     });
-//     studentsObj.averageMark = sum / studentsObj.marks.length;
-//     console.log (studentsObj);
+// function calcAverageMark (arr) {
+//     arr.forEach(function(item){
+//         item.averageMark = item.marks.reduce (function (sum, item) {
+//             return sum += item;
+//             }, 0) / item.marks.length;
+//         return item;
+//     })
+//     return arr;
 // }
+// console.log (calcAverageMark(students));
 
 //5
 
@@ -75,18 +76,14 @@ console.log(capitalizeFirstLetter("hElLo"));
 //     { make: 'Ford', model: 'Fusion', type: 'sedan', price: 22120 },
 //     { make: 'Ford', model: 'Explorer', type: 'SUV', price: 31660 }
 //   ];
-// let sumPrice = 0;
-// let counter = 0;
-// vehicles.map ((auto) => {
-//     if (auto.type.toLowerCase() === "suv") {
-//         sumPrice += auto.price;
-//         counter++;
-//         console.log (auto);
-//     }
-// }
-// )
-// const averagePrice = sumPrice / counter;
-// console.log (averagePrice);
+// const filtVehicles = vehicles.filter(item => item.type.toLowerCase() === 'suv');
+// const sumFiltrPrise = filtVehicles.reduce(function (sum, item) {
+//     sum += item.price;
+//     return sum;
+//     }, 0)
+
+// console.log (filtVehicles);
+// console.log (sumFiltrPrise);
 
 //6
 
@@ -99,11 +96,11 @@ console.log(capitalizeFirstLetter("hElLo"));
 
 //7
 
-// let arr = [10, 20, 3, 4, 0, 99, 97];
+// const arr = [10, 20, 3, 4, 0, 99, 97];
 // function copySorted(arr) {
-//     let copyArr = arr.concat();
+//     let copyArr = arr.slice();
 //     return copyArr.sort ((a,b) => a - b);
 // }
-// let sorted = copySorted(arr);
+// const sorted = copySorted(arr);
 // console.log(arr);
 // console.log(sorted);
