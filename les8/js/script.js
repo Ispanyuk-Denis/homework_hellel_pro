@@ -7,9 +7,9 @@
 
 //2
 
-// function getDiffDays (startDate, endDate) {
-//     startDate = Date.parse(startDate);
-//     endDate = Date.parse(endDate);
+// function getDiffDays (start, end) {
+//     const startDate = Date.parse(start);
+//     const endDate = Date.parse(end);
 //     if (isNaN(endDate) || isNaN(startDate)){
 //         return 'Error: invalid date';
 //     }
@@ -27,10 +27,10 @@
 
 //3
 
-// function isWeekend (userDate) {
-//     userDate = new Date(userDate);
-//     const dayOfWeek = userDate.getDay();
-//     return dayOfWeek === 0 ? true : dayOfWeek === 6 ? true : false 
+// function isWeekend (date) {
+//     const inputDate = new Date(date);
+//     const dayOfWeek = inputDate.getDay();
+//     return dayOfWeek === 0 || dayOfWeek === 6 
 // }
 
 // console.log(isWeekend('2022-02-12')); // true
