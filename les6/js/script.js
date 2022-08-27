@@ -16,13 +16,9 @@
 
 // function findShort(sentance) {
 //         const arrSentance=sentance.split(" ");
-//         let min = 0;
-//         for (let i=1; i<arrSentance.length; i++) { 
-//             if (arrSentance[min].length > arrSentance[i].length) {
-//                 min = i;
-//             }
-//         }
-//         return arrSentance[min];
+//         arrSentance.sort ((a,b) => a.length - b.length);
+//         console.log (arrSentance);
+//         return arrSentance[0]
 //     }
 // const sentance = "Lorem ipsum dolor sit amet";
 // console.log(findShort(sentance)); // sit
