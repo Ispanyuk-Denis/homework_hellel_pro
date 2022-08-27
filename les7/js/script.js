@@ -19,17 +19,19 @@
 
 //2
 
-// function createCalculator(a) {
+
+// function createCalculator(defaultValue) {
+//     let result = defaultValue;
 //     return {
-//         sum: (b) => a += b,
-//         mult: (b) => a *= b,
-//         sub: (b) => a -= b,
-//         div: (b) => a /= b
+//         sum: (initialValue) => result += initialValue,
+//         mult: (initialValue) => result *= initialValue,
+//         sub: (initialValue) => result -= initialValue,
+//         div: (initialValue) => result /= initialValue
 //     }
 // }
 // const calc = createCalculator(10);
 
-// console.log(calc.sum(5)); /// 15
+// console.log(calc.sum(5)); /// 15ss
 // console.log(calc.mult(10)); // 150
 // console.log(calc.sub(40)); // 110
 // console.log(calc.div(10)); // 11
