@@ -22,16 +22,13 @@ class Employee extends Person {
   constructor (jobPosition, salary, firstName, lastName, age, birthDayDate) {
     super(firstName, lastName, age, birthDayDate);
     this.jobPosition = jobPosition;
-    this.salary = salary;
+    this.#salary = salary;
   }
 
-  #salary = function getSalary () {
-    this.#salary = this.salary;
-    return this.#salary;
-  }
+  #salary;
 
   getSalaryOfYear() {
-    console.log (`Salary of year ${this.#salary() * 12}`);
+    console.log (`Salary of year ${this.#salary * 12}`);
   }
 
   celebrate () {
