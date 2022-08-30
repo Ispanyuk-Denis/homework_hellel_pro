@@ -27,8 +27,12 @@ class Employee extends Person {
 
   #salary;
 
+  get salaryEmployee () {
+    return this.#salary;
+  }
+
   getSalaryOfYear() {
-    console.log (`Salary of year ${this.#salary * 12}`);
+    console.log (`Salary of year ${this.salaryEmployee * 12}`);
   }
 
   celebrate () {
@@ -54,4 +58,5 @@ const employee = new Employee('QA', 1000, 'Ivan', 'Franko', 25, '1989-08-28');
 console.log (employee);
 person.celebrate();
 employee.celebrate();
+console.log (employee.salaryEmployee);
 employee.getSalaryOfYear();
