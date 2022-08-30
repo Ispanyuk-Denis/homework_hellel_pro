@@ -25,15 +25,13 @@ class Employee extends Person {
     this.salary = salary;
   }
 
-  #salary = 0;
-
-  getSalary () {
+  #salary = function getSalary () {
     this.#salary = this.salary;
     return this.#salary;
   }
 
   getSalaryOfYear() {
-    console.log (`Salary of year ${this.getSalary() * 12}`);
+    console.log (`Salary of year ${this.#salary() * 12}`);
   }
 
   celebrate () {
@@ -54,7 +52,7 @@ function isWeekend (valueDate) {
   return console.log (`Happy Birthday, but I need to work`)
 }
 
-const person = new Person('Taras', 'Shevchenko', 30, '1989-02-05');
+const person = new Person('Taras', 'Shevchenko', 30, '1989-02-03');
 const employee = new Employee('QA', 1000, 'Ivan', 'Franko', 25, '1989-08-28');
 console.log (employee);
 person.celebrate();
