@@ -12,34 +12,33 @@ class Person {
   }
 
   celebrate () {
-    return console.log (`Happy Birthday, let’s celebrate`)
+    if (calcDayOfWeek(this.birthDayDate) === 0 || calcDayOfWeek(this.birthDayDate) === 6) {
+      return console.log (`Happy Birthday, let’s celebrate`)
+    }
+    return console.log (`Happy Birthday, but I need to work`)
   }
 
 }
 
 class Employee extends Person {
 
-  constructor (jobPosition, firstName, lastName, age, birthDayDate) {
+  constructor (jobPosition, salary, firstName, lastName, age, birthDayDate) {
     super(firstName, lastName, age, birthDayDate);
     this.jobPosition = jobPosition;
+    this.salary = salary;
   }
 
-  #salary = 1000;
+  #salary = 0;
 
-  get employeeSalary () {
-    return this.#salary
+  getSalary () {
+    this.#salary = this.salary;
+    return this.#salary;
   }
 
   getSalaryOfYear() {
-    console.log (`Salary of year ${this.employeeSalary * 12}`);
+    console.log (`Salary of year ${this.getSalary() * 12}`);
   }
 
-  celebrate () {
-    if (calcDayOfWeek(this.birthDayDate) === 0 || calcDayOfWeek(this.birthDayDate) === 6) {
-      return console.log (`Happy Birthday, let’s celebrate`)
-    }
-    return console.log (`Happy Birthday, but I need to work`)
-  }
 }
 
 function calcDayOfWeek (valueDate) {
@@ -48,7 +47,9 @@ function calcDayOfWeek (valueDate) {
   return dayOfWeek
 }
 
-const person = new Person('Taras', 'Shevchenko', 30, '1989-02-06');
-const employee = new Employee('QA', 'Ivan', 'Franko', 25, '1989-02-06');
+const person = new Person('Taras', 'Shevchenko', 30, '1989-02-05');
+const employee = new Employee('QA', 1000, 'Ivan', 'Franko', 25, '1989-02-06');
+console.log (employee);
 person.celebrate();
 employee.celebrate();
+employee.getSalaryOfYear();
