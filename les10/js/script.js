@@ -12,7 +12,7 @@ class Person {
   }
 
   celebrate () {
-    return isWeekend (this.birthDayDate);
+      return console.log ('Happy Birthday, let’s celebrate');
   }
 
 }
@@ -36,25 +36,25 @@ class Employee extends Person {
   }
 
   celebrate () {
-    const birthDayInThisYear = new Date();
-    const birthDay = new Date(this.birthDayDate);
-    birthDayInThisYear.setMonth(birthDay.getMonth(), birthDay.getDate());
-    return isWeekend(birthDayInThisYear);
+    const todayDate = new Date();
+    const birthDayInThisYear = new Date(this.birthDayDate);
+    birthDayInThisYear.setFullYear(todayDate.getFullYear());
+    if (isWeekend (birthDayInThisYear)) {
+      return super.celebrate();
+    }
+    return console.log ('Happy Birthday, but I need to work');
   }
 
 }
 
-function isWeekend (valueDate) {
-  const inputDate = new Date(valueDate);
-  const dayOfWeek = inputDate.getDay();
-  if (dayOfWeek === 0 || dayOfWeek === 6) {
-    return console.log (`Happy Birthday, let’s celebrate`)
-  }
-  return console.log (`Happy Birthday, but I need to work`)
+function isWeekend (date) {
+    const inputDate = new Date(date);
+    const dayOfWeek = inputDate.getDay();
+    return dayOfWeek === 0 || dayOfWeek === 6 
 }
 
 const person = new Person('Taras', 'Shevchenko', 30, '1989-02-03');
-const employee = new Employee('QA', 1000, 'Ivan', 'Franko', 25, '1989-08-28');
+const employee = new Employee('QA', 1000, 'Ivan', 'Franko', 25, '1989-08-29');
 console.log (employee);
 person.celebrate();
 employee.celebrate();
