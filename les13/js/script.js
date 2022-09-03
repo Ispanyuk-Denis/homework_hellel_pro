@@ -27,14 +27,9 @@
 
 //3
 
-// function isAfter (startDate, finishDate) {
-//     if (!/\w+/.test(startDate) || !/\w+/.test(finishDate)) {
-//         const start = startDate.getTime();
-//         const finish = finishDate.getTime();
-//         return (start > finish)
-//     }
-//     return (startDate > finishDate);
-// }
-// console.log(isAfter(new Date(1989, 6, 10), new Date(1987, 1, 11))); // true
-// console.log(isAfter(1648636135000, 1648549735000)); // true
-// console.log(isAfter(1648549735000, 1648636135000)); // false
+function isAfter (startDate, finishDate) {
+    return (startDate > finishDate);
+}
+console.log(isAfter(new Date(1989, 6, 10), new Date(1987, 1, 11))); // true
+console.log(isAfter(1648636135000, 1648549735000)); // true
+console.log(isAfter(1648549735000, 1648636135000)); // false
