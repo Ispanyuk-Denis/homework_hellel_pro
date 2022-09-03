@@ -2,31 +2,24 @@
 
 //1
 
-// const API_URL = "https://jsonplaceholder.typicode.com/users/1";
-// fetch(API_URL)
-// .then((response) => response.json())
-// .then((result) => {
-//     const dataUser = result;
-//     localStorage.setItem("obj", JSON.stringify(dataUser));
-// })
-// .then (() => {
-//     const localDataUser = JSON.parse(localStorage.getItem('obj'));
-//     if (localDataUser === null) {
-//         fetch(API_URL)
-//         .then((response) => response.json())
-//         .then((result) => {
-//             const dataUser = result;
-//             localStorage.setItem("obj", JSON.stringify(dataUser));
-//             }
-//         )
-//     }
-// })
-// .catch((error) => console.log(error));
+// const localDataUser = JSON.parse(localStorage.getItem('obj'));
+// if (localDataUser === null) {
+//     const API_URL = "https://jsonplaceholder.typicode.com/users/1";
+//     fetch(API_URL)
+//     .then((response) => response.json())
+//     .then((result) => {
+//         const dataUser = result;
+//         localStorage.setItem("obj", JSON.stringify(dataUser));
+//         }
+//     )
+//     .catch((error) => console.log(error));
+// }
+// console.log(localDataUser);
 
 //2
 
 // function isValidDateFormat(str) {
-//     let regexp = /^\d\d\d\d\/\d\d\/\d\d \d\d\:\d\d$/
+//     let regexp = /^\d{4}\/\d{2}\/\d{2} \d{2}\:\d{2}$/
 //     return regexp.test(str)
 // }
 // console.log(isValidDateFormat("2012/09/18 12:10")); // true
@@ -35,7 +28,7 @@
 //3
 
 // function isAfter (startDate, finishDate) {
-//     if (typeof startDate === 'object' || typeof finishDate === 'object') {
+//     if (!/\w+/.test(startDate) || !/\w+/.test(finishDate)) {
 //         const start = startDate.getTime();
 //         const finish = finishDate.getTime();
 //         return (start > finish)
